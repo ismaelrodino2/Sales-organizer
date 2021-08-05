@@ -22,13 +22,6 @@ export function Alarm(){
             var yyyy = now.getFullYear();
             var dd = now.getDate();
 
-            //alert date
-            if (prioritiesCtx.totalPriorities > 0){
-                var alertdate = prioritiesCtx.priorities[0].date; 
-            } else{
-                var alertdate = null
-            }
-
             if(dd<10) {
                 dd = '0'+dd
             } 
@@ -38,13 +31,19 @@ export function Alarm(){
             } 
             var today = mm + '/' + dd + '/' + yyyy;
 
-            if (today === alertdate && timeNow === time.value) {
-                return (
-                    window.alert('alarm')
-                )
-            }
-            now = new Date();                  // allow for time passing
-            setTimeout(loop);
+            const audioEl = document.getElementsByClassName("audio-element")[0]
+
+            const dates = prioritiesCtx.priorities.map(function(item){
+                if (item.date.includes(today) && timeNow === time.value) {
+                    return(
+                        audioEl.play() //the audio will play for one minute, till timeNow changes
+                    )
+                } 
+            })
+            console.log(dates)
+
+            now = new Date();   // allow for time passing
+            setTimeout(loop, 5000);
         })();       
 
     }
@@ -53,6 +52,9 @@ export function Alarm(){
             <h1>what time do you want the alarm for?</h1>
             <input type="time" id="timeClock" />
             <button onClick={surprise}>Set Alarm</button>
+            <audio className="audio-element">
+          <source src="https://www.fesliyanstudios.com/play-mp3/4386"></source>
+        </audio>
         </div>
     )
 }
