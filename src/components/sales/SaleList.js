@@ -4,7 +4,7 @@ export function SaleList(props) {
     const {toggleDeleteHandler} = props
     return(
         <>
-            <ul className="border-2">
+            <ul>
                 {props.sales.map(item => <SaleItem
                     sales = {item}
                     key={item.id}

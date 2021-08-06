@@ -27,27 +27,27 @@ export function SaleItem(props){
     }
 
     return(
-        <li className="border-2">
+        <li className="flex flex-col items-center px-6 py-1">
             <Card>
-                <div>
+                <div className="flex w-56 py-1 md:w-96">
                     <h1>Date: </h1>
                     <p>{props.date}</p>
                 </div>
-                <div>
+                <div className="flex py-1">
                     <h1>Buyer: </h1>
                     <p>{props.buyer}</p>
                 </div>
-                <div>
+                <div className="flex py-1">
                     <h1>Sale: </h1>
                     <p>{props.sale}</p>
                 </div>
-                <div>
+                <div className="flex py-1">
                     <h1>Unities: </h1>
                     <p>{props.unities}</p>
                 </div>
-                <div>
-                    <button onClick={togglePrioritiesStatusHandler}>{itemIsPriorities ? "Remove from priorities" : "Add to priorities"}</button>
-                    <button className={itemIsPriorities ? 'hidden' : null} onClick={() => toggleDeleteHandler(props.sales)}>Delete</button>
+                <div className="flex justify-between py-2 buttons">
+                    <button  onClick={togglePrioritiesStatusHandler}>{itemIsPriorities ? "Remove" : "Add" }</button>
+                    <button  className={itemIsPriorities ? 'hidden' : null} onClick={() => toggleDeleteHandler(props.sales)}>Delete</button>
                 </div>
             </Card>
         </li>

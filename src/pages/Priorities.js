@@ -17,7 +17,7 @@ export function Priorities(){
 
 
     return (
-        <section>
+        <section className="flex flex-col items-center p-5 bg-darkgray rounded-2xl">
             <h1>My Priorities</h1>
             {content}            
             <Alarm />

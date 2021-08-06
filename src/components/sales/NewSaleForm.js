@@ -31,24 +31,24 @@ export function NewSaleForm(props){
     return(
         <Card>
             <form action="" onSubmit={submitHandler}>
-                <div className="">
-                    <label htmlFor="date">Date</label>
-                    <input type="text" required id="date" ref={dateInputRef} />
+                <div className="py-2">
+                    <label htmlFor="date">Date: </label>
+                    <input type="text" className="outline-none rounded-2xl " required id="date" ref={dateInputRef} />
                 </div>
-                <div className="">
-                    <label htmlFor="buyer">Buyer</label>
-                    <input type="text" required id="buyer" ref={buyerInputRef} />
+                <div className="py-2">
+                    <label htmlFor="buyer">Buyer: </label>
+                    <input type="text" className="outline-none rounded-2xl" required id="buyer" ref={buyerInputRef} />
                 </div>
-                <div className="">
-                    <label htmlFor="sale">sale</label>
-                    <input type="text" required id="sale" ref={saleInputRef}/>
+                <div className="py-2">
+                    <label htmlFor="sale">sale: </label>
+                    <input type="text" className="outline-none rounded-2xl" required id="sale" ref={saleInputRef}/>
                 </div>
-                <div className="">
-                    <label htmlFor="unities">unities</label>
-                    <input type="number" required id="unities" ref={unitiesInputRef} />
+                <div className="py-2">
+                    <label htmlFor="unities">unities: </label>
+                    <input type="number" className="outline-none rounded-2xl" required id="unities" ref={unitiesInputRef} />
                 </div>
-                <div className="">
-                    <button className="p-3 bg-red-600 rounded-t-lg">Add sale data</button>
+                <div className="py-4 buttons">
+                    <button >Add sale data</button>
                 </div>
             </form>
             

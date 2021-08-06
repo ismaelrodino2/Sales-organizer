@@ -38,19 +38,21 @@ export function Alarm(){
                     return(
                         audioEl.play() //the audio will play for one minute, till timeNow changes
                     )
-                } 
+                } else{
+                    return dates
+                }
             })
-            console.log(dates)
-
+            console.log(dates)  
+            
             now = new Date();   // allow for time passing
             setTimeout(loop, 5000);
         })();       
 
     }
     return(
-        <div>
+        <div className="flex flex-col items-center buttons">
             <h1>what time do you want the alarm for?</h1>
-            <input type="time" id="timeClock" />
+            <input type="time" id="timeClock" className="outline-none rounded-2xl bg-darkgray" />
             <button onClick={surprise}>Set Alarm</button>
             <audio className="audio-element">
           <source src="https://www.fesliyanstudios.com/play-mp3/4386"></source>
