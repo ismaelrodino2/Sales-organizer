@@ -38,9 +38,7 @@ export function Alarm(){
                     return(
                         audioEl.play() //the audio will play for one minute, till timeNow changes
                     )
-                } else{
-                    return dates
-                }
+                } 
             })
             console.log(dates)  
             

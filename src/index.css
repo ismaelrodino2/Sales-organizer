@@ -11,3 +11,7 @@
     border-radius: 10px;
     padding: 5px;
 }
+form input{
+    color: black !important;
+    padding: 0 5px;
+}
